@@ -1,0 +1,30 @@
+main.c: In function ‘task_timer_entry’:
+main.c:29:26: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   29 |     flags_set(task_flag, (uint32_t) arg);
+      |                          ^
+main.c: In function ‘task_entry’:
+main.c:14:20: warning: implicit declaration of function ‘BIT’ [-Wimplicit-function-declaration]
+   14 | #define TASK_FLAG  BIT(0)
+      |                    ^~~
+main.c:41:30: note: in expansion of macro ‘TASK_FLAG’
+   41 |     flags_mask_t flag_mask = TASK_FLAG;
+      |                              ^~~~~~~~~
+main.c: In function ‘example_init’:
+main.c:10:40: warning: passing argument 3 of ‘task_create’ makes pointer from integer without a cast [-Wint-conversion]
+   10 | #define TASK_PRIORITY_EXAMPLE_TASK     (7)
+      |                                        ^~~
+      |                                        |
+      |                                        int
+main.c:77:27: note: in expansion of macro ‘TASK_PRIORITY_EXAMPLE_TASK’
+   77 |                           TASK_PRIORITY_EXAMPLE_TASK,
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from main.c:6:
+os/task.h:149:10: note: expected ‘pri_t’ {aka ‘struct pri *’} but argument is of type ‘int’
+  149 | task_t * task_create (const char * name, void (*entry)(void *), pri_t priority,
+      |          ^~~~~~~~~~~
+main.c:80:5: warning: implicit declaration of function ‘ASSERT’ [-Wimplicit-function-declaration]
+   80 |     ASSERT(appTask != NULL);
+      |     ^~~~~~
+main.c:85:27: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   85 |                           (void *) TASK_FLAG,
+      |                           ^
